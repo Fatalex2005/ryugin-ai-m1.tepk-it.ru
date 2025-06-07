@@ -14,7 +14,7 @@
             <img src="{{asset('assets/images/???.png')}}" alt="Логотип">
         </div>
         <ul>
-            <li><a href="{{route('partners.index')}}">Партнёры</a></li>
+
         </ul>
     </nav>
 </header>

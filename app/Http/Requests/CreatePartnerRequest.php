@@ -22,13 +22,23 @@ class CreatePartnerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
+            'partner_type_id' => 'required|integer|exists:partner_types,id',
+            'name' => 'required|string|max:255',
+            'director' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'phone' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'inn' => 'required|string|max:255',
+            'rating' => 'required|integer|min:1|max:10',
         ];
     }
 
     public function messages(): array {
         return [
-            'name.required' => 'Имя обязательно к заполнению',
+            'partner_type_id.required' => 'Тип партнера обязателен',
+
+            'name.required' => 'Имя обязательно!',
+            'rating.max' => 'Максимальное значение 10'
         ];
     }
 }
